@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 
-Widget TextNew(String abc){
-    return Text(
-        "marsad akbar",
-        style: TextStyle(
-        color: Colors.red),
+class ChatHistory extends StatelessWidget {
+  const ChatHistory({super.key, required this.name, required int n});
+  final String name;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("welcome")),
+        body: Container(child: Text("body")),
+      ),
     );
   }
+}
