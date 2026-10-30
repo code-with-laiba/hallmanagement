@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 
 class ChatHistory extends StatelessWidget {
   const ChatHistory({super.key, required this.name, required int n});
@@ -13,4 +13,3 @@ class ChatHistory extends StatelessWidget {
       ),
     );
   }
-}
