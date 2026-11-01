@@ -3,59 +3,64 @@ void main(){
   runApp(MYApp());
 }
 class MYApp extends StatelessWidget {
-  List<Map<String ,dynamic>> students=[
-   {"Name":"Ali",  "Message":"I AM WAITING",    "AGE":"18",   "TIME":"10'00"},
-   {"Name":"HAFIZ","Message":"WHERE ARE YOU",   "AGE":"22",   "TIME":"7'00"},
-  {"Name":"ADIL",  "Message":"I AM BORED",        "AGE":"21",   "TIME":"8'00"},
-  {"Name":"UMER",  "Message":"WHY ARE YOU LATE",       "AGE":"19",   "TIME":"9'00"},
-  ];
-   MYApp({super.key});
+  const MYApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.teal,
-          title: Text("NOTFICATION", ),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Expanded(
-                child: ListView.builder(
-                  itemCount:students.length,
-                  itemBuilder: (context,index){
-                  return Column(
-                    children: [
-                      ListTile(
-                      leading: CircleAvatar(
-                        backgroundColor: Colors.blueAccent,
-                        child: Text(students[index]["Name"][0].toUpperCase())
-                      ),
-                      title: Text(students[index]["Name"]),
-                      subtitle: Text(students[index]["Message"]),
-                      trailing: Column(
-                        children: [
-                          Text(students[index]["TIME"].toString())
-                        ],
-                      ),
-                                    
-                     ),
-                     Divider(
-                         height: 1,
-                         thickness: 2,
-                       ),               
-                    ],
-                  ); } 
-                   
-                ),
-              ),
-            ],
+       appBar: AppBar(
+           backgroundColor: Colors.amberAccent,
+           title: Text("login page",
+           style: TextStyle(
+            fontWeight: FontWeight.bold
+           ),
           ),
-        )
+        ), 
+        body: Container( 
+          decoration: BoxDecoration(
+            gradient: LinearGradient(colors:[Colors.black,Colors.blueGrey,Colors.white])
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                SizedBox(height: 10),
+                TextField(
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor:  Colors.white,
+                    border: OutlineInputBorder(),
+                    hintText: "email",
+                    prefixIcon: Icon(Icons.email)),
+                  
+                ),
+                SizedBox(height: 10,),
+                TextField(
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor:  Colors.white,
+                    border: OutlineInputBorder(),
+                    hintText: "password",
+                    prefixIcon: Icon(Icons.password)
+                  ),
+                ),
+                SizedBox(height: 20,),
+                Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(colors: [Colors.yellow,Colors.deepOrangeAccent])
+                  ),
+                
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.transparent),
+                    onPressed: (){}, child: Text("login"),
+                  )
+                  )
+              ],
+            ),
+          ),
         ),
-      );
+      ),
+    );
   }
 }
