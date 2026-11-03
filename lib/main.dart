@@ -1,63 +1,46 @@
-import 'package:flutter/material.dart';
-void main(){
+ import 'package:flutter/material.dart';
+ void main (){
   runApp(MYApp());
-}
-class MYApp extends StatelessWidget {
+ }
+ class MYApp extends StatelessWidget {
   const MYApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-       appBar: AppBar(
-           backgroundColor: Colors.amberAccent,
-           title: Text("login page",
-           style: TextStyle(
-            fontWeight: FontWeight.bold
-           ),
-          ),
-        ), 
-        body: Container( 
-          decoration: BoxDecoration(
-            gradient: LinearGradient(colors:[Colors.black,Colors.blueGrey,Colors.white])
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                SizedBox(height: 10),
-                TextField(
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor:  Colors.white,
-                    border: OutlineInputBorder(),
-                    hintText: "email",
-                    prefixIcon: Icon(Icons.email)),
-                  
-                ),
-                SizedBox(height: 10,),
-                TextField(
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor:  Colors.white,
-                    border: OutlineInputBorder(),
-                    hintText: "password",
-                    prefixIcon: Icon(Icons.password)
+        appBar: AppBar(title: Text("loginpage"), backgroundColor: Colors.cyan,),
+        body: Padding(
+          padding: const EdgeInsets.all(14.0),
+          child: Column(
+            children: [
+              SizedBox(height: 10,),
+              TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
                   ),
+                  hintText: "Name",
+                  prefixIcon: Icon(Icons.person),
+                  filled: true,
+                  fillColor: Colors.blueGrey,
                 ),
-                SizedBox(height: 20,),
-                Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(colors: [Colors.yellow,Colors.deepOrangeAccent])
+              ),
+              SizedBox(height: 10,),
+              TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30),
                   ),
-                
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(backgroundColor: Colors.transparent),
-                    onPressed: (){}, child: Text("login"),
-                  )
-                  )
-              ],
-            ),
+                  hintText: "EMAIL",
+                  prefixIcon: Icon(Icons.email),
+                  filled: true,
+                  fillColor: Colors.blueGrey,
+                ),
+              ),
+              SizedBox(height: 10,),
+              ElevatedButton(onPressed: (){}, child: Text("login")),
+            ],
           ),
         ),
       ),
